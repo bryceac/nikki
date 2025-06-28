@@ -12,4 +12,11 @@ impl Entry {
             content: String::default()
         }
     }
+
+    pub fn from(date: DateTime<Utc>, content: &str) -> Self {
+        Self {
+            date,
+            content: content.to_owned()
+        }
+    }
 }
