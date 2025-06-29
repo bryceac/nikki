@@ -17,14 +17,14 @@ impl Pen {
     pub fn run(&self) {
         let now = Utc::now();
 
+        let file_name = format!("{}.md", now.format("%Y-%m-%-d_%H-%M"));
+
+        let destination = Path::new(&real_path(&self.journal)).join(file_name);
+
         if let Some(content) = self.content.clone() {
             let entry = Entry::from(now, &content);
 
-            let file_name = format!("{}.md", now.format("%Y-%m-%-d_%H-%M"));
-
-            let destination = Path::new(real_path(journal)).join(path)
-
-            write_to_file(p, &entry)
+            let _ = write_to_file(destination.to_str().unwrap(), &entry);
         }
     }
 }
