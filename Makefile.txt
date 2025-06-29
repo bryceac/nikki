@@ -8,12 +8,12 @@ install: build
 ifneq (, $(findstring darwin, $(SYS)))
 	test ! -d $(resourcedir) && mkdir -p $(resourcedir)
 
-	install "target/release/rcheckbook" "$(bindir)/rcheckbook"
+	install "target/release/nikki" "$(bindir)/nikki"
 else
-	install -D "target/release/rcheckbook" "$(bindir)/rcheckbook"
+	install -D "target/release/nikki" "$(bindir)/nikki"
 endif
 uninstall:
-	rm -rf "$(bindir)/rcheckbook"
+	rm -rf "$(bindir)/nikki"
 clean:
 	rm -rf target
 .PHONY: build install uninstall clean
