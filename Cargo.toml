@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4.41"
-clap = "4.5.40"
+clap = { version = "4.5.40", features = ["derive"] }
 edit = "0.1.5"
 shellexpand = "3.1.1"
 url_path = "0.1.3"
