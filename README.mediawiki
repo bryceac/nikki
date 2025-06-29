@@ -92,7 +92,7 @@ a file with your entry should be viewable at the following location:
 path/to/journal/current year/current month/current year-current month-current day_current_hour-current minute.md
 </pre>
 
-For example, if it is March 3rd, 2032 and the time is 1 P.M. 
+For example, if it is March 3<sup>rd</sup>, 2032 and the time is 1 P.M. 
 when you run the <strong>pen</strong> command, the location would be:
 
 <pre>
@@ -123,3 +123,19 @@ To read your entries, you can do something like this:
 <pre>
 nikki read "2032-03-03 13:00"
 </pre>
+
+This will bring up the journal entry you wrote on or for March 3<sup>rd</sup>, 2032 at 1 P.M.
+
+To see entries recognized by nikki, type the following:
+
+<pre>
+nikki list
+</pre>
+
+This will go through your journal directory and list all your entries in
+the exact format you'll need to display them with nikki.
+
+Because of how this all works, 
+you don't even need to use nikki to compose your journal entries 
+and it will recognized them, as long the file is named 
+and saved in the same directory structure as presented above.
