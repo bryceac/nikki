@@ -164,4 +164,6 @@ and it will recognized them, as long the file is named
 and saved in the same directory structure as presented above.
 
 the <strong>list</strong> and <strong>read</strong> 
-commands function similiarly to the <strong>pen</strong>
+commands function similiarly to the <strong>pen</strong>, 
+so specifying directories is the same.
+
