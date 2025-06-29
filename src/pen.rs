@@ -2,6 +2,7 @@ use std::{ fs::File, io::{ self, Write }, path::Path };
 use clap::Parser;
 use crate::{Entry, shared::real_path};
 use chrono::prelude::*;
+use edit::edit_file;
 
 #[derive(Parser)]
 pub struct Pen {
@@ -25,6 +26,10 @@ impl Pen {
             let entry = Entry::from(now, &content);
 
             let _ = write_to_file(destination.to_str().unwrap(), &entry);
+        } else {
+            match edit_file(destination) {
+
+            }
         }
     }
 }
