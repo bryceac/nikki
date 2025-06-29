@@ -17,17 +17,17 @@ pub struct Read {
 
 impl Read {
     pub fn run(&self) {
-        if let Some(entry_date_time_string) = convert_human_date_time_to_computer(&self.entry) {
-            if let Some(entry_date_time) = convert_string_to_date_time(&entry_date_time_string, "%Y-%-%m-%d_%H-%M") {
-                let year = format!("{}", entry_date_time.year());
-                let month = format!("{}", entry_date_time.month());
-                let file_name = format!("{}.md", entry_date_time_string);
+        let computer_date_time_string = convert_human_date_time_to_computer(&self.entry).expect("Wrong format! the expected format is YYYY-MM-DD HH:MM");
 
-                let entry_path = Path::new(&real_path(&self.journal)).join(&year).join(month).join(&year).join(&file_name);
+        if let Some(entry_date_time) = convert_string_to_date_time(&self.entry, "%Y-%m-%d %R") {
+            let year = format!("{}", entry_date_time.year());
+            let month = format!("{}", entry_date_time.month());
+            let file_name = format!("{}.md", computer_date_time_string);
 
-                if let Some(entry) = Entry::from_file(&entry_path) {
-                    println!("{}", entry);
-                }
+            let entry_path = Path::new(&real_path(&self.journal)).join(year).join(month).join(file_name);
+
+            if let Some(entry) = Entry::from_file(&entry_path) {
+                println!("{}", entry);
             }
         }
     }
