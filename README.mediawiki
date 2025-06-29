@@ -1,0 +1,24 @@
+=nikki=
+
+'''Author:''' Bryce Campbell
+
+'''License:''' See License
+
+'''Description:''' A Rust based CLI tool to simplify journaling
+
+'''Version:''' 0.1.0
+
+==Notes==
+
+This program has been tested on macOS Sequoia, but it 
+<strong>should</strong> on any platform.
+
+===Version History===
+
+<dl>
+<dt style="font-weight:bold">0.1</dt>
+<dd>
+<p>Initial release.</p>
+<p>Released 6/29/2025.</p>
+</dd>
+</dl>
