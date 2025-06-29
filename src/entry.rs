@@ -1,20 +1,20 @@
-use chrono::prelude::*;
+use chrono::{ LocalResult::Single, prelude::* };
 use std::{ ffi::OsStr, fs::File, io, path::Path, io::Read, fmt };
 
 pub struct Entry {
-    pub date: DateTime<Utc>,
+    pub date: DateTime<Local>,
     pub content: String
 }
 
 impl Entry {
     pub fn new() -> Self {
         Self {
-            date: Utc::now(),
+            date: Local::now(),
             content: String::default()
         }
     }
 
-    pub fn from(date: DateTime<Utc>, content: &str) -> Self {
+    pub fn from(date: DateTime<Local>, content: &str) -> Self {
         Self {
             date,
             content: content.to_owned()
@@ -48,10 +48,14 @@ impl PartialEq for Entry {
     }
 }
 
-fn date_time_from_file(p: &Path) -> Option<DateTime<Utc>> {
+fn date_time_from_file(p: &Path) -> Option<DateTime<Local>> {
     if let Some(file) = p.file_stem().and_then(OsStr::to_str) {
         if let Ok(date_time) = NaiveDateTime::parse_from_str(file, "%Y-&m-%d_%H-%M") {
-            Some(Utc.from_utc_datetime(&date_time))
+            if let Single(date_time) = Local.from_local_datetime(&date_time) {
+                Some(date_time)
+            } else {
+                None
+            }
         } else {
             None
         }
