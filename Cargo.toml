@@ -19,8 +19,8 @@ walkdir = "2.5.0"
 [package.metadata.deb]
 license-file = ["LICENSE", "4"]
 extended-description = """\
-A simple CLI based checkbook ledger to help \
-keep track of finances."""
+A simple CLI based journaling system to \
+help chronicle anything you would like."""
 section = "unknown"
 priority = "optional"
 assets = [
