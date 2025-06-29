@@ -1,7 +1,7 @@
-use std::{ fs::File, io::{ self, Write }, path::Path };
+use std::{ fs::{self, File }, io::{ self, Write }, path::Path };
 use clap::Parser;
 use crate::{Entry, shared::real_path};
-use chrono::prelude::*;
+use chrono::{ prelude::*, Datelike };
 use edit::edit_file;
 
 #[derive(Parser)]
@@ -20,7 +20,12 @@ impl Pen {
 
         let file_name = format!("{}.md", now.format("%Y-%m-%-d_%H-%M"));
 
-        let destination = Path::new(&real_path(&self.journal)).join(file_name);
+        let year = format!("{}", now.year());
+        let month = format!("{}", now.month());
+
+        let destination = Path::new(&real_path(&self.journal)).join(year).join(month).join(file_name);
+
+        let _ = fs::create_dir_all(destination.parent().unwrap());
 
         if let Some(content) = self.content.clone() {
             let entry = Entry::from(now, &content);
