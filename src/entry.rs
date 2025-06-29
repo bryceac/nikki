@@ -28,6 +28,10 @@ impl Entry {
             None
         }
     }
+
+    pub fn to_string(&self) -> String {
+        format!("{}\r\n-----\r\n\r\n{}", self.date.format("%Y-%m-%d %R"), self.content)
+    }
 }
 
 fn date_time_from_file(p: &Path) -> Option<DateTime<Utc>> {
