@@ -136,7 +136,7 @@ you can use nikki to do so far easier than on your own.
 To read your entries, you can do something like this:
 
 <pre>
-nikki read "2032-03-03 13:00"
+nikki read -e "2032-03-03 13:00"
 </pre>
 
 This will bring up the journal entry you wrote on or for March 3<sup>rd</sup>, 2032 at 1 P.M., 
