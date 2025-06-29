@@ -97,7 +97,7 @@ If you'd like to avoid this step, type something like the following instead:
 nikki pen -e "Hello, World!"
 </pre>
 
-Once you have typed up your entry and saved it or run the initial command,
+Once you have typed up your entry and saved it or run the above command,
 a file with your entry should be viewable at the following location:
 
 <pre>
