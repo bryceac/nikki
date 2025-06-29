@@ -54,3 +54,25 @@ so I decided to go with that.</p>
 </dl>
 </li>
 </ol>
+
+===Usage===
+
+after installing the program, all you need to do is something like this:
+
+<pre>
+nikki pen
+</pre>
+
+This will create your first entry in your new journal in the following directory:
+
+<pre>
+~/.journal
+</pre>
+
+and then it will launch the default text editor on your system, such as:
+
+* vi
+* emacs
+* nano
+* ed
+* micro
