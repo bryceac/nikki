@@ -4,6 +4,7 @@ mod nikki;
 mod subcommand;
 mod pen;
 mod list;
+mod read;
 
 use nikki::Nikki;
 use list::List as List;
