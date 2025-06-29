@@ -2,6 +2,11 @@
 name = "nikki"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "CLI based journaling system"
+homepage = "https://github.com/bryceac/nikki"
+repository = "https://github.com/bryceac/nikki"
+keywords = ["nikki", "journal", "journaling", "commandline", "cli"]
 
 [dependencies]
 chrono = "0.4.41"
