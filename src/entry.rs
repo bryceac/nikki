@@ -1,5 +1,5 @@
 use chrono::prelude::*;
-use std::{ ffi::OsStr, fs::File, path::Path };
+use std::{ ffi::OsStr, fs::File, io, path::Path, io::Read };
 
 pub struct Entry {
     pub date: DateTime<Utc>,
@@ -22,8 +22,8 @@ impl Entry {
     }
 
     pub fn from_file(p: &Path) -> Option<Self> {
-        if let Some(date) = date_time_from_file(p) {
-
+        if let (Some(date), Ok(content)) = (date_time_from_file(p), contents_from_file(p)) {
+            Some(Self::from(date, &content))
         } else {
             None
         }
@@ -40,4 +40,12 @@ fn date_time_from_file(p: &Path) -> Option<DateTime<Utc>> {
     } else {
         None
     }
+}
+
+fn contents_from_file(p: &Path) -> Result<String, io::Error> {
+    let mut content = String::default();
+
+    File::open(p)?.read_to_string(&mut content)?;
+
+    Ok(content)
 }
