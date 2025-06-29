@@ -1,6 +1,7 @@
 use clap::Parser;
 use walkdir::WalkDir;
-use std::path::Path;
+use std::{ ffi::OsStr, path::Path };
+use crate::shared::*;
 
 #[derive(Parser)]
 pub struct List {
@@ -15,7 +16,11 @@ impl List {
         for item in WalkDir::new(journal_path) {
             if let Ok(entry) = item {
                 if entry.path().is_file() {
-
+                    if let Some(file_name) = entry.path().file_stem().and_then(OsStr::to_str) {
+                        if let Some(entry_string) = convert_computer_date_time_to_human(file_name) {
+                            println!("{}", entry_string)
+                        }
+                    }    
                 }
             }
         }
