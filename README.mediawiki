@@ -53,6 +53,18 @@ so I decided to go with that.</p>
 </dd>
 </dl>
 </li>
+<li>
+<dl>
+<dt style="font-weight:bold">Does nikki support encryption?</dt>
+<dd>
+<p>No, it does not because I wanted something simplistic 
+and allowed me the flexibility of not even needing the program itself
+to read or write entries.</p>
+<p>If you want encryption, I suggest looking elsewhere, 
+as there are plenty of other options out there.</p>
+</dd>
+</dl>
+</li>
 </ol>
 
 ===Usage===
