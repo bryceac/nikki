@@ -22,3 +22,35 @@ This program has been tested on macOS Sequoia, but it
 <p>Released 6/29/2025.</p>
 </dd>
 </dl>
+
+===Questions===
+
+<ol>
+<li>
+<dl>
+<dt style="font-weight:bold">There are already so many journaling application systems. Why create yet another?</dt>
+<dd>
+<p>While I have indeed found plenty of option,
+<a href="https://jrnl.sh/en/stable/">jrnl</a>, even 
+some having features that I'd like, 
+they seem to be a bit more complicated than I'd like.</p>
+<p>Also having made a tool to do my finances, 
+so that I can do that nearly anywhere, I thought I would make my own.</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt style="font-weight:bold">Why the name nikki?</dt>
+<dd>
+<p>Sometimes, it can be hard to come up with a name, 
+especially if you want it to stand out.</p>
+<p>I was going to it chronicle, but as the name was taken, 
+I decided to try to look up a word in Japanese meaning diary
+and I found that nikki had that meaning and nobody really used it, 
+except for maybe the anime/manga series <cite>Mirai Nikki</cite>, 
+so I decided to go with that.</p>
+</dd>
+</dl>
+</li>
+</ol>
