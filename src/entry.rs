@@ -1,5 +1,5 @@
 use chrono::prelude::*;
-use std::{ ffi::OsStr, fs::File, io, path::Path, io::Read };
+use std::{ ffi::OsStr, fs::File, io, path::Path, io::Read, fmt };
 
 pub struct Entry {
     pub date: DateTime<Utc>,
@@ -31,6 +31,20 @@ impl Entry {
 
     pub fn to_string(&self) -> String {
         format!("{}\r\n-----\r\n\r\n{}", self.date.format("%Y-%m-%d %R"), self.content)
+    }
+}
+
+impl fmt::Display for Entry {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+
+        write!(f, "{}", self.to_string())
+    }
+}
+
+impl PartialEq for Entry {
+    fn eq(&self, other: &Self) -> bool {
+        self.date == other.date &&
+        self.content == other.content
     }
 }
 
