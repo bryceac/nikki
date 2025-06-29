@@ -11,10 +11,13 @@ pub struct List {
 
 impl List {
     pub fn run(&self) {
-        let journal_path = Path::new(&self.journal);
+        let input = real_path(&self.journal);
+        
+        let journal_path = Path::new(&input);
 
         for item in WalkDir::new(journal_path) {
             if let Ok(entry) = item {
+                println!("item found");
                 if entry.path().is_file() {
                     if let Some(file_name) = entry.path().file_stem().and_then(OsStr::to_str) {
                         if let Some(entry_string) = convert_computer_date_time_to_human(file_name) {
