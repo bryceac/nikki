@@ -23,7 +23,9 @@ impl Read {
 
                 let entry_path = Path::new(&real_path(&self.journal)).join(&year).join(month).join(&year).join(&file_name);
 
-                if let Some(entry) = Entry::from_file(entry_path.to_str())
+                if let Some(entry) = Entry::from_file(&entry_path) {
+                    println!("{}", entry);
+                }
             }
         }
     }
