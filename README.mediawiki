@@ -120,6 +120,9 @@ by doing something like this:
 nikki pen ~/work
 </pre>
 
+The above will look for a folder called <strong>work</strong> in
+your home directory.
+
 Regardless of what method you choose, 
 nikki will create all directories that do not exist.
 
