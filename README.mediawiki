@@ -76,3 +76,50 @@ and then it will launch the default text editor on your system, such as:
 * nano
 * ed
 * micro
+
+After that, you can just write up your entry.
+
+If you'd like to avoid this step, type something like the following instead:
+
+<pre>
+nikki pen -e "Hello, World!"
+</pre>
+
+Once you have typed up your entry and saved it or run the initial command,
+a file with your entry should be viewable at the following location:
+
+<pre>
+path/to/journal/current year/current month/current year-current month-current day_current_hour-current minute.md
+</pre>
+
+For example, if it is March 3rd, 2032 and the time is 1 P.M. 
+when you run the <strong>pen</strong> command, the location would be:
+
+<pre>
+path/to/journal/2032/3/2032-03-03_13-00.md
+</pre>
+
+While the directory structure cannot be changed, 
+you can specify a location for your journal other than the default, 
+which would be a hidden folder on macOS, Linux, and FreeBSD in your home directory,
+by doing something like this:
+
+<pre>
+nikki pen ~/work
+</pre>
+
+Regardless of what method you choose, 
+nikki will create all directories that do not exist.
+
+====Reading Entries====
+
+While it is not necessary to use nikki to read 
+through your journal entries, 
+as your entries are saved as plain text files, 
+you can use nikki to do so far easier than on your own.
+
+To read your entries, you can do something like this:
+
+<pre>
+nikki read "2032-03-03 13:00"
+</pre>
