@@ -1,5 +1,6 @@
 use chrono::{ LocalResult::Single, prelude::* };
 use std::{ ffi::OsStr, fs::File, io, path::Path, io::Read, fmt };
+use crate::shared::*;
 
 pub struct Entry {
     pub date: DateTime<Local>,
@@ -22,8 +23,12 @@ impl Entry {
     }
 
     pub fn from_file(p: &Path) -> Option<Self> {
-        if let (Some(date), Ok(content)) = (date_time_from_file(p), contents_from_file(p)) {
-            Some(Self::from(date, &content))
+        if let Some(entry_date) = date_time_from_file(p) {
+            if let Ok(content) = contents_from_file(p) {
+                Some(Self::from(entry_date, &content))
+            } else {
+                None
+            }
         } else {
             None
         }
@@ -49,16 +54,8 @@ impl PartialEq for Entry {
 }
 
 fn date_time_from_file(p: &Path) -> Option<DateTime<Local>> {
-    if let Some(file) = p.file_stem().and_then(OsStr::to_str) {
-        if let Ok(date_time) = NaiveDateTime::parse_from_str(file, "%Y-&m-%d_%H-%M") {
-            if let Single(date_time) = Local.from_local_datetime(&date_time) {
-                Some(date_time)
-            } else {
-                None
-            }
-        } else {
-            None
-        }
+    if let Some(file_name) = p.file_stem().and_then(OsStr::to_str) {
+        convert_string_to_date_time(file_name, "%Y-%m-%d_%H-%M")
     } else {
         None
     }
