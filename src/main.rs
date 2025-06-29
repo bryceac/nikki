@@ -4,10 +4,16 @@ mod nikki;
 mod subcommand;
 mod pen;
 
+use nikki::Nikki;
 use subcommand::SubCommand as SubCommand;
 use pen::Pen as Pen;
 use entry::Entry as Entry;
+use clap::Parser;
 
 fn main() {
-    println!("Hello, world!");
+    let journal = Nikki::parse();
+
+    match journal.subcommand {
+        SubCommand::Pen(pen) => pen.run()
+    }
 }
