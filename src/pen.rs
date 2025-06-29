@@ -29,7 +29,7 @@ impl Pen {
         } else {
             match edit_file(destination) {
                 Ok(_) => {},
-                Err(_ ) => ()
+                Err(_) => ()
             }
         }
     }
