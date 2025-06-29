@@ -5,6 +5,7 @@ use chrono::{ prelude::*, Datelike };
 use edit::edit_file;
 
 #[derive(Parser)]
+#[clap(version = "0.1.0", about = "create journal entries", author = "Bryce Campbell <tonyhawk2100@gmail.com>", long_about = "create journal entries. Typically, this will bring up your default editor, but by using nikki pen -c Message, you can skip all of that.")]
 pub struct Pen {
 
     #[clap(default_value = "~/.journal")]

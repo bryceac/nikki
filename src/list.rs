@@ -4,6 +4,7 @@ use std::{ ffi::OsStr, path::Path };
 use crate::shared::*;
 
 #[derive(Parser)]
+#[clap(version = "0.1.0", about = "list entries recognized by nikki", author = "Bryce Campbell <tonyhawk2100@gmail.com>", long_about = "display journal entries recognized by Nikki. They are list as date times in the format of YYYY-MM-DD HH:MM")]
 pub struct List {
     #[clap(default_value = "~/.journal")]
     pub journal: String
