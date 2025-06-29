@@ -167,3 +167,12 @@ the <strong>list</strong> and <strong>read</strong>
 commands function similiarly to the <strong>pen</strong>, 
 so specifying directories is the same.
 
+===Support===
+
+If you are experiencing troubles, use the address below. 
+I should be able to help you, since this is a rather simple application, 
+but I don't think I can fix everything, 
+since problem might lie with the dependencies 
+rather than the application itself.
+
+tonyhawk2100@gmail.com
