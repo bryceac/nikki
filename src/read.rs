@@ -10,6 +10,8 @@ use chrono::Datelike;
 pub struct Read {
     #[clap(default_value = "~/.journal")]
     pub journal: String,
+
+    #[clap(long, short)]
     pub entry: String
 }
 
