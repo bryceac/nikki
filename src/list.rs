@@ -1,4 +1,6 @@
 use clap::Parser;
+use walkdir::WalkDir;
+use std::path::Path;
 
 #[derive(Parser)]
 pub struct List {
@@ -8,6 +10,14 @@ pub struct List {
 
 impl List {
     pub fn run(&self) {
-        todo!();
+        let journal_path = Path::new(&self.journal);
+
+        for item in WalkDir::new(journal_path) {
+            if let Ok(entry) = item {
+                if entry.path().is_file() {
+
+                }
+            }
+        }
     }
 }
