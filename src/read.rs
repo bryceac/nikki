@@ -2,7 +2,7 @@ use std::{ path::Path};
 
 use clap::Parser;
 
-use crate::{shared::{convert_human_date_time_to_computer, convert_string_to_date_time, real_path}, entry::Entry};
+use crate::{shared::{convert_human_date_time_to_computer, convert_string_to_date_time, real_path}, Entry};
 
 use chrono::Datelike;
 
