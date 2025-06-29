@@ -140,7 +140,7 @@ This will bring up the journal entry you wrote on or for March 3<sup>rd</sup>, 2
 and will look like this:
 
 <pre>
-2025-06-29 10:54
+2032-03-03 13:00
 -----
 
 Hello, World!
