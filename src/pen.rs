@@ -28,7 +28,8 @@ impl Pen {
             let _ = write_to_file(destination.to_str().unwrap(), &entry);
         } else {
             match edit_file(destination) {
-
+                Ok(_) => {},
+                Err(_ ) => ()
             }
         }
     }
