@@ -16,7 +16,7 @@ pub struct Pen {
 
 impl Pen {
     pub fn run(&self) {
-        let now = Utc::now();
+        let now = Local::now();
 
         let file_name = format!("{}.md", now.format("%Y-%m-%-d_%H-%M"));
 
