@@ -136,7 +136,15 @@ To read your entries, you can do something like this:
 nikki read "2032-03-03 13:00"
 </pre>
 
-This will bring up the journal entry you wrote on or for March 3<sup>rd</sup>, 2032 at 1 P.M.
+This will bring up the journal entry you wrote on or for March 3<sup>rd</sup>, 2032 at 1 P.M., 
+and will look like this:
+
+<pre>
+2025-06-29 10:54
+-----
+
+Hello, World!
+</pre>
 
 To see entries recognized by nikki, type the following:
 
@@ -151,3 +159,6 @@ Because of how this all works,
 you don't even need to use nikki to compose your journal entries 
 and it will recognized them, as long the file is named 
 and saved in the same directory structure as presented above.
+
+the <strong>list</strong> and <strong>read</strong> 
+commands function similiarly to the <strong>pen</strong>
