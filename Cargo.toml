@@ -5,6 +5,7 @@ edition = "2021"
 license = "MIT"
 description = "CLI based journaling system"
 homepage = "https://github.com/bryceac/nikki"
+readme = "README.mediawiki"
 repository = "https://github.com/bryceac/nikki"
 keywords = ["nikki", "journal", "journaling", "commandline", "cli"]
 
