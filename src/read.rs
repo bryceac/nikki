@@ -7,6 +7,7 @@ use crate::{shared::{convert_human_date_time_to_computer, convert_string_to_date
 use chrono::Datelike;
 
 #[derive(Parser)]
+#[clap(version = "0.1.0", about = "display an entry recognized by Nikki. The entries are called by entering a date time in the YYYY-MM-DD HH:MM format.")]
 pub struct Read {
     #[clap(default_value = "~/.journal")]
     pub journal: String,
