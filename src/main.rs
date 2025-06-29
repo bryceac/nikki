@@ -3,8 +3,10 @@ mod entry;
 mod nikki;
 mod subcommand;
 mod pen;
+mod list;
 
 use nikki::Nikki;
+use list::List as List;
 use subcommand::SubCommand as SubCommand;
 use pen::Pen as Pen;
 use entry::Entry as Entry;
