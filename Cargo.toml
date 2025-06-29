@@ -1,5 +1,6 @@
 [package]
 name = "nikki"
+authors = ["Bryce Campbell <tonyhawk2100@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
