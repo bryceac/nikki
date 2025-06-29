@@ -16,6 +16,7 @@ fn main() {
     let journal = Nikki::parse();
 
     match journal.subcommand {
+        SubCommand::List(list) => list.run(),
         SubCommand::Pen(pen) => pen.run()
     }
 }
