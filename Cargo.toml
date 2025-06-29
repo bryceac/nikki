@@ -24,10 +24,10 @@ keep track of finances."""
 section = "unknown"
 priority = "optional"
 assets = [
-    ["target/release/rcheckbook", "usr/local/bin/", "755"],
+    ["target/release/nikki", "usr/local/bin/", "755"],
 ]
 
 [package.metadata.generate-rpm]
 assets = [
-    { source = "target/release/rcheckbook", dest = "/usr/local/bin/", mode = "755" },
+    { source = "target/release/nikki", dest = "/usr/local/bin/", mode = "755" },
 ]
